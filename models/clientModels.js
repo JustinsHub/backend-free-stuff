@@ -12,4 +12,14 @@ class Clients {
     }
 }
 
-module.exports = Clients
+class Email {
+    static async getAllEmailAddresses(){
+        const allEmail = await database.query('SELECT * FROM email_address')
+        return allEmail
+    }
+}
+
+module.exports = {
+    Clients,
+    Email
+}

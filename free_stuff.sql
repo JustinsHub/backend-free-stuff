@@ -20,3 +20,4 @@ CREATE TABLE email_address (
     email TEXT
 );
 
+INSERT INTO email_address (email) VALUES ('dexter@wexter.com');
