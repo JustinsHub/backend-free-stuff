@@ -14,9 +14,16 @@ class ErrorNotAuthorized extends ExpressError {
     }
 }
 
+//400 ERROR BAD REQUEST
+class ErrorBadRequest extends ExpressError {
+    constructor(message = "Bad Request"){
+        super(message, 400)
+    }
+}
+
 //404 ERROR PAGE NOT FOUND
 class ErrorNotFound extends ExpressError {
-    constructor(message = "Page Not Found"){
+    constructor(message = "Not Found"){
         super(message, 404)
     }
 }
@@ -24,5 +31,6 @@ class ErrorNotFound extends ExpressError {
 module.exports = {
     ExpressError,
     ErrorNotAuthorized,
-    ErrorNotFound
+    ErrorNotFound,
+    ErrorBadRequest
 }

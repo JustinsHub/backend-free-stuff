@@ -20,4 +20,6 @@ CREATE TABLE email_address (
     email TEXT
 );
 
+INSERT INTO potential_clients (full_name, email) VALUES ('Dexter Wexter','lalapalooza@gmail.com');
+
 INSERT INTO email_address (email) VALUES ('dexter@wexter.com');

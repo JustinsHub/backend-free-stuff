@@ -2,7 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const clientRoutes = require('./routes/clientRoutes')
-require("dotenv").config()
+const emailRoutes = require('./routes/emailRoutes')
 
 const app = express()
 
@@ -11,7 +11,8 @@ app.use(cors())
 app.use(express.urlencoded({extended:true}))
 app.use(morgan('dev'))
 
-app.get('/client', clientRoutes)
+app.use('/client', clientRoutes)
+app.use('/email', emailRoutes)
 
 app.use((error, req, res, next)=> {
     let status = error.status || 500
