@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS potential_clients, email_address;
 CREATE TABLE potential_clients (
     id serial PRIMARY KEY, 
     full_name TEXT NOT NULL,
-    phone_number INTEGER,
+    phone_number TEXT,
     email TEXT NOT NULL,
     comments TEXT
 );

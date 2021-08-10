@@ -21,6 +21,17 @@ class Clients {
         }
         throw new ErrorNotFound('Client not found.')
     }
+
+    static async createNewClient(full_name, phone_number, email, comments){
+        const createClient = await database.query(`INSERT INTO potential_clients 
+                                                    (full_name, phone_number, email, comments) VALUES ($1,$2,$3,$4) 
+                                                    RETURNING full_name, phone_number, email, comments`, [full_name, phone_number, email, comments])
+        const newClient = createClient.rows[0]
+        if(newClient){
+            return newClient
+        }
+        throw new ErrorBadRequest()
+    }
 }
 
 class Email {
